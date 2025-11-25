@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>KidGuard Control</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <div class="header">
+    <!-- Smart Icon -->
+    <svg class="popup-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="30" class="icon-circle"/>
+      <text x="32" y="38" text-anchor="middle" font-size="20" fill="white">K</text>
+    </svg>
+    <span class="title">KidGuard</span>
+  </div>
+
+  <div class="status-box">
+    <span>Protection:</span>
+    <label class="switch">
+      <input type="checkbox" id="toggleProtection">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <p id="status">Status: Loading...</p>
+
+  <button id="openSettings" class="settings-btn">Open Settings</button>
+
+  <div class="color-buttons">
+    <button id="green-btn">Safe</button>
+    <button id="red-btn">Blocked</button>
+    <button id="yellow-btn">Warning</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>KidGuard Settings</title>
+  <link rel="stylesheet" href="options.css" />
+  
+  <style>
+    /* Login Overlay */
+    #loginOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+    }
+    #loginBox {
+      background:#fff;
+      padding:20px;
+      border-radius:10px;
+      width:320px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.25);
+    }
+    #loginBox input { 
+      width:100%; 
+      padding:10px; 
+      margin-top:10px; 
+      border-radius:6px;
+      border:1px solid #ccc;
+    }
+    #loginBox button { 
+      margin-top:12px; 
+      padding:10px; 
+      width:100%; 
+      border:none;
+      background:#4a90e2;
+      color:white;
+      border-radius:6px;
+      cursor:pointer;
+    }
+    .small { 
+      font-size:12px; 
+      color:#555; 
+      margin-top:6px; 
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Password Protection Overlay -->
+  <div id="loginOverlay" style="display:none;">
+    <div id="loginBox">
+      <h3>Parent Authentication</h3>
+
+      <input id="parentPasswordInput" type="password" placeholder="Enter parent password" />
+      <button id="parentLoginBtn">Unlock</button>
+
+      <div class="small">
+        First time? Leave password empty and click Unlock, then set a new password.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h1>KidGuard Settings</h1>
+
+    <!-- Parent Password Section -->
+    <div class="card">
+      <h2>Parent Password</h2>
+
+      <input id="currentPwd" type="password" placeholder="Current password (empty if none)" />
+      <input id="newPwd" type="password" placeholder="New password" />
+      <input id="confirmPwd" type="password" placeholder="Confirm new password" />
+
+      <button id="setPwdBtn">Set / Change Password</button>
+
+      <div id="pwdMsg" style="color:green;margin-top:10px;"></div>
+    </div>
+
+    <!-- Allowed Keywords -->
+    <div class="card">
+      <h2>Allowed Keywords</h2>
+
+      <div class="input-row">
+        <input id="keywordInput" type="text" placeholder="Add keyword..." />
+        <button id="addKeywordBtn">Add</button>
+      </div>
+
+      <ul id="keywordList" class="list"></ul>
+    </div>
+
+    <!-- Allowed Channels -->
+    <div class="card">
+      <h2>Allowed Channels</h2>
+
+      <div class="input-row">
+        <input id="channelInput" type="text" placeholder="Add channel name..." />
+        <button id="addChannelBtn">Add</button>
+      </div>
+
+      <ul id="channelList" class="list"></ul>
+    </div>
+
+  </div>
+
+  <script src="options.js"></script>
+
+</body>
+</html>

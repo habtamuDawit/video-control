@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "KidGuard",
+  "version": "1.0",
+  "description": "Control and monitor your child's internet usage",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "48": "icons/kidguard-green-48.png"
+    }
+  },
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options/options.html",
+  "icons": {
+    "48": "icons/kidguard-green-48.png",
+    "128": "icons/kidguard-green-128.png"
+  }
+}
